@@ -1,0 +1,51 @@
+package domain;
+
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        
+       
+        System.out.println("Luas Permukaan Tubuh : " + hitungLPT(50, 150));
+        System.out.println("Luas Permukaan Tubuh : " + pembulatanDuaDesimal(hitungLPT(50, 150)));
+        
+        System.out.println("GFR : " + hitungGFR(40, 50, 1));
+        System.out.println("GFR : " + pembulatanDuaDesimal(hitungGFR(40, 50, 1)));
+        
+        System.out.println("GFR Obese : " + hitungGFRobese(40, 50, 150, 1));
+        System.out.println("GFR Obese : " + pembulatanDuaDesimal(hitungGFRobese(40, 50, 150, 1)));
+        
+        System.out.println("Indeks Massa Tubuh : " + hitungIMT(50, 150));
+        System.out.println("Indeks Massa Tubuh : " + pembulatanDuaDesimal(hitungIMT(50, 150)));
+   
+    }
+
+
+    static double hitungLPT(double beratBadan, double tinggiBadan){
+        double LPT = Math.sqrt((beratBadan * tinggiBadan) / 3600);
+        return LPT;
+            
+    }
+
+    static double hitungGFR(double umur, double beratBadan, double serumKreatinin){
+        double GFR = ((140 - umur) * beratBadan * 0.85) / (72 * serumKreatinin);
+        return GFR;
+    }
+
+    static double hitungGFRobese(double umur, double beratBadan, double tinggiBadan, double serumKreatinin){
+        double GFRobese = ((146 - umur) * ((beratBadan * 0.287) + (((tinggiBadan / 100) * (tinggiBadan / 100)) * 9.74))) / (60 * serumKreatinin);
+        return GFRobese;
+    }
+
+    static double hitungIMT(double beratBadan, double tinggiBadan){
+        double IMT = beratBadan / ((tinggiBadan / 100) * (tinggiBadan / 100));
+        return IMT;
+    }
+
+    public static double pembulatanDuaDesimal(double nilai) {
+        double pembulatan1 = Math.round(nilai * 100); 
+        double pembulatan2 = pembulatan1 / 100;
+        return pembulatan2;
+}
+
+
+}
