@@ -1,21 +1,34 @@
 package domain;
 
+class DataPasien{
+    double GFR;
+    double IMT;
+    double GFRobese;
+    double LPT;
+}
+
 public class HelloWorld {
 
     public static void main(String[] args) {
         
+        DataPasien pasien1 = new DataPasien();
+        
+        pasien1.GFR = hitungGFR(40, 50, 1);
+        pasien1.IMT = hitungIMT(50, 150);
+        pasien1.GFRobese = hitungGFRobese(40, 50, 150, 1);
+        pasien1.LPT = hitungLPT(50, 150);
        
-        System.out.println("Luas Permukaan Tubuh : " + hitungLPT(50, 150));
-        System.out.println("Luas Permukaan Tubuh : " + pembulatanDuaDesimal(hitungLPT(50, 150)));
+        System.out.println("Luas Permukaan Tubuh : " + pasien1.LPT);
+        System.out.println("Luas Permukaan Tubuh : " + pembulatanDuaDesimal(pasien1.LPT));
         
-        System.out.println("GFR : " + hitungGFR(40, 50, 1));
-        System.out.println("GFR : " + pembulatanDuaDesimal(hitungGFR(40, 50, 1)));
+        System.out.println("GFR : " + pasien1.GFR);
+        System.out.println("GFR : " + pembulatanDuaDesimal(pasien1.GFR));
         
-        System.out.println("GFR Obese : " + hitungGFRobese(40, 50, 150, 1));
-        System.out.println("GFR Obese : " + pembulatanDuaDesimal(hitungGFRobese(40, 50, 150, 1)));
+        System.out.println("GFR Obese : " + pasien1.GFRobese);
+        System.out.println("GFR Obese : " + pembulatanDuaDesimal(pasien1.GFRobese));
         
-        System.out.println("Indeks Massa Tubuh : " + hitungIMT(50, 150));
-        System.out.println("Indeks Massa Tubuh : " + pembulatanDuaDesimal(hitungIMT(50, 150)));
+        System.out.println("Indeks Massa Tubuh : " + pasien1.IMT);
+        System.out.println("Indeks Massa Tubuh : " + pembulatanDuaDesimal(pasien1.IMT));
    
     }
 
